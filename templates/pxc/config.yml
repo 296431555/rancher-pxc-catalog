@@ -1,0 +1,8 @@
+name:  Pxc
+description: |
+   Pxc image
+version:  1.0.0
+category:  mysql
+maintainer:  pxc
+license:  Apache 2
+projectURL: https://github.com/liumiaocn/rancher-cattle-autocatalog
