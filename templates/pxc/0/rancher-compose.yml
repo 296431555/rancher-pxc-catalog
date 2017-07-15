@@ -55,4 +55,6 @@ pxc:
       sync_binlog=0
       max_connections=1000
       default-time-zone='+8:00'
+      character-set-server=utf8
+      lower_case_table_names=1
       wsrep_sst_auth=sstuser:${pxc_sst_password}
