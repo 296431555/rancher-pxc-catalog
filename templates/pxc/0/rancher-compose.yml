@@ -53,7 +53,7 @@ pxc:
       query_cache_size=0
       query_cache_type=0
       sync_binlog=0
-      max_connections=1000
+      max_connections=2000
       default-time-zone='+8:00'
       character-set-server=utf8
       lower_case_table_names=1
