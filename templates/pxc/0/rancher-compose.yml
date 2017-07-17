@@ -35,8 +35,26 @@
       type: string
       required: true
       label: "innodb_buffer_pool_size"
-      description: "Password for the MySQL user of the created database"
+      description: "innodb_buffer_pool_size"
       default: "6144M"
+    - variable: "innodb_log_file_size"
+      type: string
+      required: true
+      label: "innodb_log_file_size"
+      description: "innodb_log_file_size"
+      default: "2048M"
+    - variable: "innodb_log_buffer_size"
+      type: string
+      required: true
+      label: "innodb_log_buffer_size"
+      description: "innodb_log_buffer_size"
+      default: "256M"
+    - variable: "max_connections"
+      type: string
+      required: true
+      label: "max_connections"
+      description: "max_connections"
+      default: "2000"
 pxc:
   scale: 3
   health_check:
@@ -53,13 +71,13 @@ pxc:
       innodb_doublewrite=0
       innodb_flush_log_at_trx_commit=0
       innodb_file_per_table=1
-      innodb_log_file_size=2048M
-      innodb_log_buffer_size=256M
+      innodb_log_file_size=${innodb_log_file_size}
+      innodb_log_buffer_size=${innodb_log_buffer_size}
       innodb_support_xa=0
       query_cache_size=0
       query_cache_type=0
       sync_binlog=0
-      max_connections=2000
+      max_connections=${max_connections}
       default-time-zone='+8:00'
       character-set-server=utf8
       lower_case_table_names=1
