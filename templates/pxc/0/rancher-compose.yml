@@ -59,8 +59,8 @@
       type: string
       required: true
       label: "innodb_flush_log_at_trx_commit"
-      description: "innodb_flush_log_at_trx_commit"
-      default: "2000"
+      description: "If the value of innodb_flush_log_at_trx_commit is 0, the log buffer is written out to the log file once per second and the flush to disk operation is performed on the log file, but nothing is done at a transaction commit. When the value is 1, the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. When the value is 2, the log buffer is written out to the file at each commit, but the flush to disk operation is not performed on it. However, the flushing on the log file takes place once per second also when the value is 2. Note that the once-per-second flushing is not 100% guaranteed to happen every second, due to process scheduling issues."
+      default: "1"
 pxc:
   scale: 3
   health_check:
