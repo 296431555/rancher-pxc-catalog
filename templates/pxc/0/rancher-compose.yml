@@ -55,6 +55,12 @@
       label: "max_connections"
       description: "max_connections"
       default: "2000"
+    - variable: "innodb_flush_log_at_trx_commit"
+      type: string
+      required: true
+      label: "innodb_flush_log_at_trx_commit"
+      description: "innodb_flush_log_at_trx_commit"
+      default: "2000"
 pxc:
   scale: 3
   health_check:
@@ -69,7 +75,7 @@ pxc:
     mysqld: |
       innodb_buffer_pool_size=${innodb_buffer_pool_size}
       innodb_doublewrite=0
-      innodb_flush_log_at_trx_commit=0
+      innodb_flush_log_at_trx_commit=${innodb_flush_log_at_trx_commit}
       innodb_file_per_table=1
       innodb_log_file_size=${innodb_log_file_size}
       innodb_log_buffer_size=${innodb_log_buffer_size}
